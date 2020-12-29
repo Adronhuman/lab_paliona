@@ -25,11 +25,12 @@ from werkzeug.security import generate_password_hash,check_password_hash
 from flask_httpauth import HTTPBasicAuth
 from flask_bcrypt import Bcrypt
 app = Flask(__name__)
-app = Flask(__name__)
+
 bcrypt = Bcrypt(app)
 
 session = Session(engine)
 auth = HTTPBasicAuth(app)
+
 
 @app.route('/')
 def hello_world():

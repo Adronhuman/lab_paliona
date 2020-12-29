@@ -1,6 +1,4 @@
 from sqlalchemy import Column, Integer, String
-import mysql.connector
-from mysql.connector import connect
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, ForeignKey
 from sqlalchemy.orm import Session
@@ -96,5 +94,5 @@ class Order(Base):
         return {c.name: getattr(self, c.name) for c in self.__table__.colum}
 
 
-engine = create_engine('mysql+mysqlconnector://root:romik4252@localhost:3306/db_lab6')
+engine = create_engine('mssql+pyodbc://PC0007/lab-2?driver=SQL+Server+Native+Client+11.0')
 Base.metadata.create_all(engine)
